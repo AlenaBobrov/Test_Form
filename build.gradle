@@ -11,13 +11,6 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-allure {
-    version = '2.20.1'
-    useJUnit5 {
-        version = '2.20.1'
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -30,11 +23,9 @@ dependencies {
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'com.codeborne:selenide:6.13.0'
     testImplementation 'io.qameta.allure:allure-selenide:2.21.0'
-    implementation 'org.postgresql:postgresql:42.2.23.jre7'
 }
 
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-    systemProperty 'datasource.url', System.getProperty('datasource.url','jdbc:mysql://localhost:3306/app')
 }
